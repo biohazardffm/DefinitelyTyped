@@ -34,4 +34,12 @@ declare module "mongoose" {
 		find(conditions: any, callback: (err: any, res: any[]) => void ): Query;
 	}
 
+    export interface Document {
+		_id: string;
+		update(doc: any, options: any, callback: (err: any, affectedRows: number, raw: any) => void ): Query;
+		save(fn?: (err: any, res: any) => void ): void;
+		remove(callback?: (err) => void ): Query;
+    }
+
+
 }
